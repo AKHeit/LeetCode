@@ -1,23 +1,13 @@
-#
-# Lengthy Docstring about Python Rules
-#
 """
-PYTHON HELP
-- sudo apt-get install pylint
-- built in functions: https://docs.python.org/3/library/functions.html
-- help(object/class) will get the description and docstring u
-- q exits the help menu
-- ctrl + l clears the terminal
-- type(object) will report back a class
-- print(object) will specify object and it's hex address
-- help(object/class) will show documentation of said class
-- pylint xxx.py to run guido style check
+Problem: 728_SelfDividingNums
+Level: Easy
+Technique: Brute Force
+Accepted
 
-BASH HELP
-- printf "\033c" to clear terminal for real
-
-VIM HELP
-- 
+Problem Description:
+A self-dividing number is a number that is divisible by every digit it contains.
+For example, 128 is a self-dividing number because 128 % 1 == 0, 128 % 2 == 0, and 128 % 8 == 0. Also, a self-dividing number is not allowed to contain the digit zero.
+Given a lower and upper number bound, output a list of every possible self dividing number, including the bounds if possible. 
 """
 
 import math
@@ -34,15 +24,14 @@ class Solution(object):
         :type return: List[int]
         :method calls: self.isSelfDividing
         """
-
         testvals = range(left, right+1)
         answers = []
         for i_val in testvals:
             ISD = self.isSelfDividing(i_val, debug)
             if ISD:
                 answers.append(i_val)
-        return answers
-            
+        return answers 
+
     def isSelfDividing(self, num, debug=False):
         """
         :type num: integer
@@ -86,6 +75,8 @@ if __name__ == "__main__":
     """
     test code here
     """
+
+    # LeetCode example problem
     s = Solution()
     l = 1
     r = 22
