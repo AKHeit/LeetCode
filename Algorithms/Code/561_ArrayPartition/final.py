@@ -1,6 +1,7 @@
 """
 Problem: 561 Array Partion 1 
 Level: Very Easy
+Tag: array, math, basic
 Technique: Brute Force
 Accepted
 
