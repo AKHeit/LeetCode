@@ -202,3 +202,17 @@ Takeaways:
 can save space by modifying list rather than build new list
 modify list both iteratively and recursively
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Problem: 21 Merge Two Sorted Lists
+Level: easy
+Tags: linked lists, merge, pointers
+Technique: brute force, iterative, recursive
+Status: Accepted
+
+Problem Description:
+Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.
+
+Lesson:
+- unchanging dummy node to start
+- drop off dummy for final answer
