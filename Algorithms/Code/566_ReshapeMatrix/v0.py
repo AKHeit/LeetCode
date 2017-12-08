@@ -42,7 +42,7 @@ class Solution(object):
         i1 = c
         for row in range(r):
             rn     = array[i0:i1]
-            m[row] = rn[:]
+            m[row] = rn
             i0     = i1
             i1     = i1 + c
 

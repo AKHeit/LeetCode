@@ -1,16 +1,141 @@
 All code is manually subversioned (v0_0, v0_1, ... v1_0, v1_1 etc.)
 final.py is what is finally submitted to LeetCode
 
+Contents:
+- Tracking
+- Notes
+- Description
+
+http://cslibrary.stanford.edu/
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#
+#             Tracking 
+#
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To Do:
+LinkedList problems ("search linked")
+83
+21
+234 palindrome linked list
+linked lists, stacks/queues, hashes, heaps and trees
+
+Clean up understanding of how python structures are pased through methods
 
 Tags:
 array, math, basic, recursive, binary tree
 
 
-Accepted:
+Problems:
 561 Array Partition
 566 Reshape Matrix
 617_MergeTwoBinaryTrees
 728_SelfDividingNums
+
+Space Complexity:
+Space complexity is a measure of the amount of working storage an algorithm needs. That means how much memory, in the worst case, is needed at any point in the algorithm. As with time complexity, we're mostly concerned with how the space needs grow, in big-Oh terms, as the size N of the input problem grows.
+
+
+
+
+
+
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#
+#             Notes 
+#
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Contents:
+- Alg Linked Lists
+
+
+#
+#             Alg Linked Lists
+# 
+
+Def of classic Linked List:
+- single head pointer points to the first node of list. 
+- each node contains a single .next pointer to the next node. 
+- .next pointer of the last node is NULL. 
+- empty list is represented by a NULL head pointer
+- all of the nodes are allocated in the heap
+
+Classic utility functions:
+- get the length of the list
+- read off a node
+- insert node to the head of a list
+
+Dynamic alternative to arrays:
+- pro: no need to preallocate size and memory  
+- pro: can dynamically grow 
+- pro: easy to shift elements
+- con: elements accesed by chain of next
+- con: linear search (O(n)) rather than O(1) for arrays
+
+Pointers: review
+- C/C++ initiates all pointers with bad values (not NULL)
+- always initiate a pointer as NULL (JAVA) to force crash
+- "dereference" operation accesses the "pointee" of a pointer
+- p=q doesn't copy the data, just assigns pointers to same pointee
+- C/C++ malloc() and free() assign blocks of memory in the heap
+
+
+Python node/linked list implementation (basic):
+"""
+class Node(object):
+    def __init__(self, data=None, next_node=None):
+        self.data = data
+        self.next_node = next_node
+
+    def get_data(self):
+        return self.data
+
+    def get_next(self):
+        return self.next_node
+
+    def set_next(self, new_next):
+        self.next_node = new_next
+
+class LinkedList:
+   def __init__(self,head = None):
+       """
+       defines a head node
+       """
+       self.head = head
+
+   def getSize(self):
+        
+       return self.size
+
+   def addNode(self,data):
+       """
+       inserts node in beginning of list
+       """
+       newNode = Node(data,self.head)
+       self.head = newNode
+       return True
+       
+   def printNode(self):
+       curr = self.head
+       while curr:
+           print(curr.data)
+           curr = curr.getNextNode()
+"""
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
