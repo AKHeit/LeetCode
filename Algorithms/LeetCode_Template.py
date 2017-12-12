@@ -2,18 +2,24 @@
 Problem: 
 Level: 
 Tags: 
-Technique: 
-Status: 
+Technique:
+Status:
 
-Problem Description:
+Problem Description:  
+
+Lesson:
 """
 
+
 class Solution(object):
-    """
-    Solution format for LeetCode
-    """
 
 
+
+
+
+#
+#           test code for terminal runs
+#
 
 if __name__== "__main__":
     """
@@ -42,14 +48,24 @@ if __name__== "__main__":
     err  = 0
     sol  = Solution()
     # test 1
-    method  =
-    input  = 
-    rows    = 1
-    columns = 4 
-    observed_answer = sol.
-    expected_answer = 
-    e = print_test(expected_answer, observed_answer,method)
-    err = err + e
+    method = 'not Palindrome'
+    tail = ListNode(0)
+    head = tail
+    for val in [2,3,4,1,0,100,2]:
+        head = addNode_head(head, val)
+    expected_answer = False
+    observed_answer = sol.isPalindrome(head)
+    err = err + print_test(expected_answer, observed_answer,method)
+
+    # test 2
+    method = 'is Palindrome'
+    tail = ListNode(0)
+    head = tail
+    for val in [4,1,4,0]:
+        head = addNode_head(head, val)
+    expected_answer = True
+    observed_answer = sol.isPalindrome(head)
+    err = err + print_test(expected_answer, observed_answer,method)
 
     # Final pass/fail readout
     print('')
@@ -57,6 +73,4 @@ if __name__== "__main__":
         print('PASSED ALL TESTS')
     else:
         print('FAILED A TEST: DEBUG!!!')
-
-
-
+    

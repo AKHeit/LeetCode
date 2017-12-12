@@ -15,25 +15,25 @@ http://cslibrary.stanford.edu/
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To Do:
-Clean up understanding of how python structures are pased through methods
-LinkedList problems ("search linked")
-141 Linked Lists (properly document, do all versions)
-234 palindrome linked list
+Clean up understanding of how python structures are passed through methods
 92 Reverse Linked List 2
 linked lists, stacks/queues, hashes, heaps and trees
 
 
 Interesting Problems:
-Basic Pointer Manipulation 206; 21; 141
+Basic Pointer Manipulation 206; 21; 141; 19
 
 
 Problems:
+19  Remove Nth Node from end of list 
 21  Merge Sorted Lists
+141 Linked Lists 
 206 Reverse Linked List
+234 Palindrome Linked List
 561 Array Partition
 566 Reshape Matrix
-617_MergeTwoBinaryTrees
-728_SelfDividingNums
+617 MergeTwoBinaryTrees
+728 SelfDividingNums
 
 Space Complexity:
 Space complexity is a measure of the amount of working storage an algorithm needs. That means how much memory, in the worst case, is needed at any point in the algorithm. As with time complexity, we're mostly concerned with how the space needs grow, in big-Oh terms, as the size N of the input problem grows.
@@ -58,10 +58,12 @@ Contents:
 #             Python
 # 
 
-Python: Dictionaries and Hash Tables
-Each method has it's own pros and cons. A red-black tree can always perform a lookup in O(log N). A hashtable can perform a lookup in O(1) time although that can degrade to O(N) depending on the input.
+Python: Dictionary Implementation
+- Python currenly uses a Hash Table
+- A red-black tree (alternative) can always perform a lookup in O(log N). 
+- A hashtable can perform a lookup in O(1) time although that can degrade to O(N) depending on the input.
 
-Python:
+Python general notes:
 - instances of user-defined objects are always hashable
 
 
@@ -237,4 +239,44 @@ Given a singly linked list, determine if it has a cycle in it. Try to solve in O
 Lesson:
 - Speed element matching in list from O(n2) to O(n) by using hash table.
 - Instances of user defined classes are hashable
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Problem: 234 Palindrome Linked List
+Level: Easy 
+Tags: 
+Technique: pointer manipulation; copying and deep copying 
+Status: Accepted
+
+Problem Description:  
+Given a singly linked list, determine if it is a palindrome 
+Could you do it in O(n) time and O(1) space
+
+Lesson:
+copy.deepcopy has a recursive limit
+be creative about saving space
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Problem: 19 Remove Nth Node from end of list 
+Level: Medium 
+Tags: 
+Technique: 
+Status: Accepted
+
+Problem Description:  
+Given a linked list, remove the nth node from the end of list and return its head.
+For example,
+   Given linked list: 1->2->3->4->5, and n = 2.
+   After removing the second node from the end, the linked list becomes 1->2->3->5.
+Note:
+Given n will always be valid.
+Try to do this in one pass. 
+
+Lesson:
+Need to be creative to get around O(1) constraint
+Additional explicit looping is easier then clever looping
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
