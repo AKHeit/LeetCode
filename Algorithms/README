@@ -16,16 +16,19 @@ http://cslibrary.stanford.edu/
 
 To Do:
 Clean up understanding of how python structures are passed through methods
+82 Remove Duplicates from Sorted List 2
 92 Reverse Linked List 2
 linked lists, stacks/queues, hashes, heaps and trees
 
 
 Interesting Problems:
-Basic Pointer Manipulation 206; 21; 141; 19
+Basic Pointer Manipulation 206; 21; 141; 19M
 
 
-Problems:
-19  Remove Nth Node from end of list 
+Problems Medium:
+19  Remove Nth Node from end of list  
+
+Problems Easy:
 21  Merge Sorted Lists
 141 Linked Lists 
 206 Reverse Linked List
