@@ -16,8 +16,8 @@ http://cslibrary.stanford.edu/
 
 To Do:
 Clean up understanding of how python structures are passed through methods
-82 Remove Duplicates from Sorted List 2
-92 Reverse Linked List 2
+25 Reverse Nodes in k-Group (Hard)
+92 Reverse Linked List 2 (Medium)
 linked lists, stacks/queues, hashes, heaps and trees
 
 
@@ -27,6 +27,7 @@ Basic Pointer Manipulation 206; 21; 141; 19M
 
 Problems Medium:
 19  Remove Nth Node from end of list  
+82 Remove Duplicates from Sorted List 2
 
 Problems Easy:
 21  Merge Sorted Lists
@@ -44,9 +45,6 @@ Space complexity is a measure of the amount of working storage an algorithm need
 
 
 
-
-
-
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #
 #             Notes 
@@ -55,6 +53,7 @@ Space complexity is a measure of the amount of working storage an algorithm need
 
 Contents:
 - Python
+- Alg General
 - Alg Linked Lists
 
 #
@@ -68,6 +67,14 @@ Python: Dictionary Implementation
 
 Python general notes:
 - instances of user-defined objects are always hashable
+
+
+#
+#             Alg General
+# 
+Red-Black tree has O(logN) lookup
+Hash Table best O(1), worst O(N)
+
 
 
 
@@ -280,6 +287,23 @@ Try to do this in one pass.
 Lesson:
 Need to be creative to get around O(1) constraint
 Additional explicit looping is easier then clever looping
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Problem: 82 Remove Duplicates from Sorted List 2
+Level: Medium
+Tags: 
+Technique: 3 Pointers
+Status: Accepted
+
+Problem Description:  
+ Given a sorted linked list, delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list.
+For example,
+Given 1->2->3->3->4->4->5, return 1->2->5.
+Given 1->1->1->2->3, return 2->3. 
+
+Lesson: 
+For while condition loops, make sure condition is evaluatable
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
