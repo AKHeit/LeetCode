@@ -25,6 +25,9 @@ Interesting Problems:
 Basic Pointer Manipulation 206; 21; 141; 19M; 25H (the best test)
 
 Problems: Linked Lists
+
+Hard:
+23 Merge K Sorted List (Hard)
 25 Reverse Nodes in k-Group (Hard)
 Medium:
 19  Remove Nth Node from end of list  
@@ -326,6 +329,23 @@ For k = 3, you should return: 3->2->1->4->5
 Lesson: 
 use head/tail pointer notation to keep straight
 use dummy nodes to maintain the head
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Problem: 23. Merge k Sorted Lists 
+Level: Hard
+Tags: 
+Technique: Brute force  
+Status: Accepted
+
+Problem Description:  
+Merge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity
+
+Lesson: 
+Brute force technique seems to work here.
+Need to learn Priority Queue and Heap Queue modules for
+Some of the more fancy answers.
+Problem should be medium not hard
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
