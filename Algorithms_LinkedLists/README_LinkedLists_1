@@ -32,8 +32,6 @@ Hard:
 Medium:
 19  Remove Nth Node from end of list  
 82 Remove Duplicates from Sorted List 2
-61 Rotate List
-143 Reorder in tricky manner, fun with O(1) space
 Easy:
 21  Merge Sorted Lists
 141 Linked Lists 
@@ -366,20 +364,3 @@ For example: Given {1,2,3,4}, reorder it to {1,4,2,3}
 Lesson: 
 Think of clever multi-step ways to achieve O(1) space
 Figure out how to edit without returning pointers
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Problem: 61 Rotate List
-Level: Medium
-Tags:  Linked List
-Technique: 
-Status: Accepted
-
-Problem Description:   
-Given a list, rotate the list to the right by k places, where k is non-negative.
-
-Example:
-Given 1->2->3->4->5->NULL and k = 2,
-return 4->5->1->2->3->NULL.
-
-Lesson: 

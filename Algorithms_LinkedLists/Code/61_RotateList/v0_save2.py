@@ -1,15 +1,16 @@
 """
-Problem: 143 Reorder List
+Problem: 61 Rotate List
 Level: Medium
 Tags:  Linked List
 Technique: 
-Status: 
+Status: Accepted
 
 Problem Description:   
-Given a singly linked list L: L0→L1→…→Ln-1→Ln,
-reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…
-You must do this in-place without altering the nodes' values.
-For example: Given {1,2,3,4}, reorder it to {1,4,2,3}
+Given a list, rotate the list to the right by k places, where k is non-negative.
+
+Example:
+Given 1->2->3->4->5->NULL and k = 2,
+return 4->5->1->2->3->NULL.
 
 Lesson: 
 """
@@ -21,13 +22,45 @@ Lesson:
 #
 ###########################################
 class Solution(object):
-    def solutionmethod():
+    def rotateRight(self, head, k):
         """
-        description
-        Time  O()
-        Space O()
+        straight forward rotation, some modular arithmetic
+        make loop then untie the loop
+        Time  O(n)
+        Space O(1)
         """
-        return []
+
+        # return the trivial cases
+        if head is None:
+            return head
+        if head.next is None:
+            return head
+        if k == 0:
+            return head
+
+        # find length, make loop
+        tail = head
+        length = 1
+        while tail.next is not None:
+            tail = tail.next
+            length = length + 1
+        tail.next = head
+
+        # reassign the answer head
+        head_new = head
+        k = k % length
+        steps = length - k
+        for i in range(steps):
+            head_new = head_new.next
+
+        # put the null in at new tail
+        tail = head_new
+        for i in range(length-1):    
+            tail = tail.next
+        tail.next = None
+
+        return head_new
+
 
 
 
@@ -110,14 +143,53 @@ if __name__== "__main__":
     test code 
     """ 
     err  = 0
+    sol = Solution()
 
-    # test 0 linked list helpers
+    # test linked list helpers
     name = 'test helpers: list to linkedlist converters'
     input = [1,2,3,4]
     output = linkedlist_tolist(list_tolinkedlist(input))
     err = err + print_test(input, output, name)
 
+    # test 
+    name = 'edge case: []'
+    input = []
+    input_a = list_tolinkedlist(input)
+    input_b = 4
+    expected = []
+    output = sol.rotateRight(input_a,input_b)
+    observed = linkedlist_tolist(output)
+    err = err + print_test(expected, observed, name)
 
+    # test 
+    name = 'edge case: list length 1'
+    input = [1]
+    input_a = list_tolinkedlist(input)
+    input_b = 4
+    expected = [1]
+    output = sol.rotateRight(input_a,input_b)
+    observed = linkedlist_tolist(output)
+    err = err + print_test(expected, observed, name)
+
+    # test 
+    name = 'edge case: rotate 0'
+    input = [1,2,3,4]
+    input_a = list_tolinkedlist(input)
+    input_b = 0
+    expected = [1,2,3,4]
+    output = sol.rotateRight(input_a,input_b)
+    observed = linkedlist_tolist(output)
+    err = err + print_test(expected, observed, name)
+
+    # test 
+    name = 'standard example'
+    input = [1,2,3,4,5]
+    input_a = list_tolinkedlist(input)
+    input_b = 2
+    expected = [4,5,1,2,3]
+    output = sol.rotateRight(input_a,input_b)
+    observed = linkedlist_tolist(output)
+    err = err + print_test(expected, observed, name)
 
     # Final pass/fail readout
     print('')

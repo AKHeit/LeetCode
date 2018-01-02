@@ -21,12 +21,17 @@ Lesson:
 #
 ###########################################
 class Solution(object):
-    def solutionmethod():
+    def reorderlist():
         """
-        description
-        Time  O()
-        Space O()
+        brute force store pointers in a list
+        Time  (O(n))
+        Space (O(n))
         """
+
+        pointers = []
+        
+
+
         return []
 
 
@@ -114,8 +119,14 @@ if __name__== "__main__":
     # test 0 linked list helpers
     name = 'test helpers: list to linkedlist converters'
     input = [1,2,3,4]
-    output = linkedlist_tolist(list_tolinkedlist(input))
-    err = err + print_test(input, output, name)
+    expected = input
+    observed = linkedlist_tolist(list_tolinkedlist(input))
+    err = err + print_test(expected, observed, name)
+
+    # test 1 simple even count
+    name = 'reorderlist: length of four'
+    input = [1,2,3,4]
+
 
 
 

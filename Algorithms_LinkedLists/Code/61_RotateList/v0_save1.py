@@ -1,15 +1,16 @@
 """
-Problem: 143 Reorder List
+Problem: 61 Rotate List
 Level: Medium
 Tags:  Linked List
 Technique: 
 Status: 
 
 Problem Description:   
-Given a singly linked list L: L0→L1→…→Ln-1→Ln,
-reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…
-You must do this in-place without altering the nodes' values.
-For example: Given {1,2,3,4}, reorder it to {1,4,2,3}
+Given a list, rotate the list to the right by k places, where k is non-negative.
+
+Example:
+Given 1->2->3->4->5->NULL and k = 2,
+return 4->5->1->2->3->NULL.
 
 Lesson: 
 """
@@ -21,13 +22,20 @@ Lesson:
 #
 ###########################################
 class Solution(object):
-    def solutionmethod():
+    def rotateRight(self, head, k):
         """
         description
         Time  O()
         Space O()
         """
-        return []
+
+        # return the trivial cases
+        if head is None:
+            return head
+        if head.next is None:
+            return head
+        if k == 0:
+            return head
 
 
 
@@ -110,14 +118,43 @@ if __name__== "__main__":
     test code 
     """ 
     err  = 0
+    sol = Solution()
 
-    # test 0 linked list helpers
+    # test linked list helpers
     name = 'test helpers: list to linkedlist converters'
     input = [1,2,3,4]
     output = linkedlist_tolist(list_tolinkedlist(input))
     err = err + print_test(input, output, name)
 
+    # test 
+    name = 'edge case: []'
+    input = []
+    input_a = list_tolinkedlist(input)
+    input_b = 4
+    expected = []
+    output = sol.rotateRight(input_a,input_b)
+    observed = linkedlist_tolist(output)
+    err = err + print_test(expected, observed, name)
 
+    # test 
+    name = 'edge case: list length 1'
+    input = [1]
+    input_a = list_tolinkedlist(input)
+    input_b = 4
+    expected = [1]
+    output = sol.rotateRight(input_a,input_b)
+    observed = linkedlist_tolist(output)
+    err = err + print_test(expected, observed, name)
+
+    # test 
+    name = 'edge case: rotate 0'
+    input = [1,2,3,4]
+    input_a = list_tolinkedlist(input)
+    input_b = 0
+    expected = [1,2,3,4]
+    output = sol.rotateRight(input_a,input_b)
+    observed = linkedlist_tolist(output)
+    err = err + print_test(expected, observed, name)
 
     # Final pass/fail readout
     print('')

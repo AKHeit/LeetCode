@@ -20,14 +20,41 @@ Lesson:
 #    LeetCode solution class
 #
 ###########################################
+import math
 class Solution(object):
-    def solutionmethod():
+    def reorderlist(self, linkedlist):
         """
-        description
-        Time  O()
-        Space O()
+        brute force store pointers in a list
+        Time  (O(n))
+        Space (O(n))
         """
-        return []
+
+        # make a list of pointers
+        pointers = []
+        tail = linkedlist
+        while tail != None:
+            pointers.append(tail)
+            tail = tail.next
+
+        # reassign pointers
+        steps = math.floor(len(pointers)/2)
+        head = ListNode(None)
+        tail = head
+        left = 0
+        right= len(pointers)-1
+        for i_step in range(steps):
+            tail.next = pointers[left]
+            tail = tail.next
+            tail.next = pointers[right]
+            tail = tail.next
+            left = left + 1
+            right = right -1 
+        if left == right:
+            tail.next = pointers[left]
+            tail = tail.next
+
+        tail.next = None
+        return head.next
 
 
 
@@ -109,14 +136,39 @@ if __name__== "__main__":
     """
     test code 
     """ 
-    err  = 0
+    err = 0
+    sol = Solution()
 
     # test 0 linked list helpers
     name = 'test helpers: list to linkedlist converters'
     input = [1,2,3,4]
-    output = linkedlist_tolist(list_tolinkedlist(input))
-    err = err + print_test(input, output, name)
+    expected = input
+    observed = linkedlist_tolist(list_tolinkedlist(input))
+    err = err + print_test(expected, observed, name)
 
+    # test 1 simple even count
+    name = 'reorderlist: length of four'
+    input = [1,2,3,4]
+    expected = [1,4,2,3]
+    output = sol.reorderlist(list_tolinkedlist(input))
+    observed = linkedlist_tolist(output)
+    err = err + print_test(expected, observed, name)
+
+    # test 2 edge case length 0
+    name = 'reorderlist: edge case length 0'
+    input = []
+    expected = []
+    output = sol.reorderlist(list_tolinkedlist(input))
+    observed = linkedlist_tolist(output)
+    err = err + print_test(expected, observed, name)
+
+    # test 3  edge case length 1
+    name = 'reorderlist: edge case length 1'
+    input = [1]
+    expected = [1]
+    output = sol.reorderlist(list_tolinkedlist(input))
+    observed = linkedlist_tolist(output)
+    err = err + print_test(expected, observed, name)
 
 
     # Final pass/fail readout
